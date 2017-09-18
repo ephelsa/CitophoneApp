@@ -43,7 +43,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
     @Override
     public UserListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card_view, parent, false);
+                .inflate(R.layout.card_view_users, parent, false);
         ViewHolder viewHolder = new ViewHolder(itemView);
         context = parent.getContext();
 

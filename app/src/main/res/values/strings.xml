@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">CitophoneApp</string>
+
+    <!-- Login -->
+    <string name="login_title">Ingreso al sistema</string>
+    <string name="user_name">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="login">Ingresar</string>
+
+    <!-- -->
     <string name="proof">Texto de Prueba</string>
     <string name="call">Llamar</string>
+
+
 </resources>
