@@ -56,9 +56,6 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
                 Toast.makeText(context, "Nombre" + userListDataList.get(position)
                         .getNombreApartamento(), Toast.LENGTH_SHORT).show();
 
-                // Continuacion del DialogFragment
-
-                FragmentManager fragmentManager = ((FragmentActivity) context).getSupportFragmentManager();
 
             }
         });
