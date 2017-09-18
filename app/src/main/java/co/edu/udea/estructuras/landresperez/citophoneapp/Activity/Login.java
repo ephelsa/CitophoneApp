@@ -21,7 +21,6 @@ public class Login extends FragmentActivity {
 
         userName = findViewById(R.id.user_name);
         password = findViewById(R.id.password);
-
         loginButton = findViewById(R.id.login_button);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
