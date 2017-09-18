@@ -8,9 +8,25 @@ public class UserListData {
 
     private String numeroApartamento, nombreApartamento;
 
+    private long numeroTelefono;
+
     public UserListData(String numeroApartamento, String nombreApartamento) {
         this.numeroApartamento = numeroApartamento;
         this.nombreApartamento = nombreApartamento;
+    }
+
+    public UserListData(String numeroApartamento, String nombreApartamento, long numeroTelefono) {
+        this.numeroApartamento = numeroApartamento;
+        this.nombreApartamento = nombreApartamento;
+        this.numeroTelefono = numeroTelefono;
+    }
+
+    public long getNumeroTelefono() {
+        return numeroTelefono;
+    }
+
+    public void setNumeroTelefono(long numeroTelefono) {
+        this.numeroTelefono = numeroTelefono;
     }
 
     public String getNumeroApartamento() {

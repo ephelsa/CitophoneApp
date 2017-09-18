@@ -1,12 +1,18 @@
 package co.edu.udea.estructuras.landresperez.citophoneapp.Adapter;
 
+import android.Manifest;
+import android.annotation.TargetApi;
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentContainer;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +29,8 @@ import co.edu.udea.estructuras.landresperez.citophoneapp.R;
  */
 
 public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHolder> {
+
+    private final int REQUEST_PERMISSION_CALL_PHONE = 1;
 
     private List<UserListData> userListDataList;
     private Context context = null;
@@ -56,7 +64,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
                 Toast.makeText(context, "Nombre" + userListDataList.get(position)
                         .getNombreApartamento(), Toast.LENGTH_SHORT).show();
 
-
+                callMethod(userListDataList.get(position).getNumeroTelefono());
             }
         });
     }
@@ -71,6 +79,36 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
         return userListDataList.size();
     }
 
+    // Private Methods
+    @TargetApi(23)
+    private void callMethod(long number) {
+        try {
+            int permissionCheck = ContextCompat.
+                    checkSelfPermission(context, Manifest.permission.CALL_PHONE);
+
+            Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
+
+            if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) context,
+                        Manifest.permission.CALL_PHONE)) {
+                    return;
+                } else {
+                    ((Activity) context).requestPermissions(new String[]{Manifest.permission.CALL_PHONE},
+                            REQUEST_PERMISSION_CALL_PHONE);
+                    return;
+                }
+            } else {
+                Toast.makeText(context, "Llamando...", Toast.LENGTH_SHORT).show();
+            }
+
+            context.startActivity(callIntent);
+        } catch (ActivityNotFoundException e) {
+            Log.e("Llamada", "Call failed", e);
+        }
+    }
+
+
+    // Class
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         CardView card;
@@ -79,9 +117,9 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
         public ViewHolder(View itemView) {
             super(itemView);
 
-            card = (CardView) itemView.findViewById(R.id.cardView1);
-            numberApartment = (TextView) itemView.findViewById(R.id.apartment_number);
-            nameApartment = (TextView) itemView.findViewById(R.id.apartment_represent);
+            card = itemView.findViewById(R.id.cardView1);
+            numberApartment = itemView.findViewById(R.id.apartment_number);
+            nameApartment = itemView.findViewById(R.id.apartment_represent);
         }
     }
 }

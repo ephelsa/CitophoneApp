@@ -25,10 +25,6 @@ import co.edu.udea.estructuras.landresperez.citophoneapp.R;
 
 public class UserList extends AppCompatActivity {
 
-    private final int REQUEST_PERMISSION_CALL_PHONE = 1;
-
-    private Button callButton;
-
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
     private List<UserListData> dataList;
@@ -38,8 +34,6 @@ public class UserList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycler_view);
 
-        callButton = (Button) findViewById(R.id.call);
-
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
         linearLayoutManager = new LinearLayoutManager(this);
@@ -47,46 +41,14 @@ public class UserList extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         iniciar();
-
-        callButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(UserList.this, "Llamando", Toast.LENGTH_SHORT).show();
-
-                callMethod();
-            }
-        });
-    }
-
-    @TargetApi(23)
-    private void callMethod() {
-        try {
-            int permissionCheck = ContextCompat.
-                    checkSelfPermission(this, Manifest.permission.CALL_PHONE);
-
-            Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 31504093));
-            if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-                if (ActivityCompat.shouldShowRequestPermissionRationale(this,
-                        Manifest.permission.CALL_PHONE)) {
-                    return;
-                } else {
-                    requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, REQUEST_PERMISSION_CALL_PHONE);
-                }
-            } else {
-                Toast.makeText(this, "Permission (already) Granted!", Toast.LENGTH_SHORT).show();
-            }
-
-            startActivity(callIntent);
-        } catch (ActivityNotFoundException e) {
-            Log.e("Llamada", "Call failed", e);
-        }
     }
 
     private void iniciar() {
         dataList = new ArrayList<>();
 
         for(int i = 1; i < 20; i++) {
-            dataList.add(new UserListData(String.valueOf(100 + i), "ENCARGADO DEL APARTAMENTO " + i));
+            dataList.add(new UserListData(String.valueOf(100 + i), "ENCARGADO DEL APARTAMENTO " + i,
+                    30178650 + i));
         }
 
         UserListAdapter userListAdapter = new UserListAdapter(dataList);
