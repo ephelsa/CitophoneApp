@@ -34,9 +34,9 @@ public class UserList extends AppCompatActivity {
     private void iniciar() {
         dataList = new ArrayList<>();
 
-        for(int i = 1; i < 20; i++) {
+        for(int i = 1; i <= 20; i++) {
             dataList.add(new UserListData(String.valueOf(100 + i), "ENCARGADO DEL APARTAMENTO " + i,
-                    30178650 + i));
+                    3000000 + i));
         }
 
         UserListAdapter userListAdapter = new UserListAdapter(dataList);
