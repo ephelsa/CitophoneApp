@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">CitophoneApp</string>
+    <string name="proof">Texto de Prueba</string>
+    <string name="call">Llamar</string>
 </resources>
