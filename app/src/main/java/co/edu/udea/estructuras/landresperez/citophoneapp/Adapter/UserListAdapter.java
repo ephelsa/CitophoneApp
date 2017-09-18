@@ -39,12 +39,12 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
         this.userListDataList = userListDataList;
     }
 
-
     @Override
     public UserListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.card_view_users, parent, false);
         ViewHolder viewHolder = new ViewHolder(itemView);
+
         context = parent.getContext();
 
         return viewHolder;
@@ -56,7 +56,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
         holder.numberApartment.setText(userListDataList.get(position).getNumeroApartamento());
 
         /*
-        * Aquí están definidos los clics en cada card.
+        * Onclic methods.
         * */
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,7 +117,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
         public ViewHolder(View itemView) {
             super(itemView);
 
-            card = itemView.findViewById(R.id.cardView1);
+            card = itemView.findViewById(R.id.card_view_users);
             numberApartment = itemView.findViewById(R.id.apartment_number);
             nameApartment = itemView.findViewById(R.id.apartment_represent);
         }

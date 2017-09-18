@@ -6,7 +6,7 @@
     android:layout_height="100dp">
 
     <android.support.v7.widget.CardView
-        android:id="@+id/card_view_users"
+        android:id="@+id/card_view_blocks"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="2dp"
@@ -19,30 +19,17 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            
+
             <TextView
-                android:id="@+id/apartment_number"
+                android:id="@+id/block_number"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:padding="10dp"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@string/proof"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
                 android:textSize="20dp"/>
 
-            <TextView
-                android:id="@+id/apartment_represent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/apartment_number"
-                android:padding="10dp"
-                android:gravity="center|bottom"
-                android:text="@string/proof"
-                android:textStyle="italic"
-                android:textSize="16dp"
-                android:maxLength="30"/>
         </RelativeLayout>
 
     </android.support.v7.widget.CardView>

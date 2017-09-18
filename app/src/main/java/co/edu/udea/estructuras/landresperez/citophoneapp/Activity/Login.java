@@ -33,7 +33,7 @@ public class Login extends FragmentActivity {
 
     // Private Methods
     private void toBlocks () {
-        Intent intent = new Intent(Login.this, UserList.class);
+        Intent intent = new Intent(Login.this, Block.class);
 
         startActivity(intent);
     }
