@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CitophoneApp.iml" filepath="$PROJECT_DIR$/CitophoneApp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/citophoneapp/citophoneapp.iml" filepath="$PROJECT_DIR$/citophoneapp/citophoneapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/client_citophoneapp/client_citophoneapp.iml" filepath="$PROJECT_DIR$/client_citophoneapp/client_citophoneapp.iml" />
     </modules>
   </component>
 </project>

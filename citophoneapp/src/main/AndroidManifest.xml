@@ -3,6 +3,7 @@
     package="co.edu.udea.estructuras.landresperez.citophoneapp">
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
     <application
         android:allowBackup="true"
