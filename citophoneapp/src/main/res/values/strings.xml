@@ -7,14 +7,18 @@
     <string name="password">Contraseña</string>
     <string name="login">Ingresar</string>
 
-    <string name="auth_failed">Error de autenticación</string>
+    <string name="auth_failed">Usuario o contraseña incorrectos</string>
     <string name="void_fields">Campo(s) vacío(s)</string>
-    <string name="short_password">La contraseña debe contener al menos 6 caracteres.</string>
+    <string name="short_password">La contraseña debe contener al menos 6 caracteres</string>
+
+
+    <!-- Block -->
+    <string name="block">Bloque </string>
+    <string name="fail_read">Error de lectura en DB</string>
 
     <!-- -->
     <string name="proof">Texto de Prueba</string>
     <string name="call">Llamar</string>
     <string name="logout">Cerrar sesión</string>
-
 
 </resources>

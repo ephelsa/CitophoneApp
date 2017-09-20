@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import co.edu.udea.estructuras.landresperez.citophoneapp.Adapter.BlockAdapter;
-import co.edu.udea.estructuras.landresperez.citophoneapp.Data.BlockData;
+import co.edu.udea.estructuras.landresperez.citophoneapp.Model.BlockData;
 import co.edu.udea.estructuras.landresperez.citophoneapp.R;
 
 /**
@@ -32,17 +32,24 @@ public class Block extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
+
     private List<BlockData> blockDataList;
+    private BlockAdapter blockAdapter;
 
     // Firebase methods
     // Write a message to the database
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private DatabaseReference myRef = database.getReference("Bloque");
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        blockDataList = new ArrayList<>();
+        blockAdapter = new BlockAdapter(blockDataList);
+
+        // Views
         setContentView(R.layout.recycler_view);
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -51,39 +58,34 @@ public class Block extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
 
-        iniciar();
+        recyclerView.setAdapter(blockAdapter);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
 
-        blockDataList = new ArrayList<>();
-
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                Log.d("Block", "Value is: " + value);
+                blockDataList.removeAll(blockDataList);
 
+                for (DataSnapshot numero : dataSnapshot.getChildren()) {
+                    blockDataList.add(new BlockData(getResources().getString(R.string.block)
+                            + numero.getKey()));
+                }
 
-                blockDataList.add(new BlockData("Bloque " + String.valueOf(+ 1)));
-
+                blockAdapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
-                Log.w("Block", "Failed to read value.", error.toException());
+                Toast.makeText(getApplicationContext(), R.string.fail_read,
+                        Toast.LENGTH_SHORT).show();
             }
         });
-
-        BlockAdapter blockAdapter = new BlockAdapter(blockDataList);
-
-        recyclerView.setAdapter(blockAdapter);
     }
 
     @Override
@@ -103,11 +105,6 @@ public class Block extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    private void iniciar() {
-        // Delete this method when join with Firebase
-
     }
 
     /*

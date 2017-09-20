@@ -21,7 +21,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import co.edu.udea.estructuras.landresperez.citophoneapp.Data.UserListData;
+import co.edu.udea.estructuras.landresperez.citophoneapp.Model.UserListData;
 import co.edu.udea.estructuras.landresperez.citophoneapp.R;
 
 /**

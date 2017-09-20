@@ -1,4 +1,4 @@
-package co.edu.udea.estructuras.landresperez.citophoneapp.Data;
+package co.edu.udea.estructuras.landresperez.citophoneapp.Model;
 
 /**
  * Created by landres.perez on 18/08/17.
@@ -10,9 +10,7 @@ public class UserListData {
 
     private long numeroTelefono;
 
-    public UserListData(String numeroApartamento, String nombreApartamento) {
-        this.numeroApartamento = numeroApartamento;
-        this.nombreApartamento = nombreApartamento;
+    public UserListData() {
     }
 
     public UserListData(String numeroApartamento, String nombreApartamento, long numeroTelefono) {

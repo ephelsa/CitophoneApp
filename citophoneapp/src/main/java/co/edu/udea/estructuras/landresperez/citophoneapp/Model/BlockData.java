@@ -1,11 +1,18 @@
-package co.edu.udea.estructuras.landresperez.citophoneapp.Data;
+package co.edu.udea.estructuras.landresperez.citophoneapp.Model;
 
 /**
  * Created by landres.perez on 18/09/17.
  */
 
 public class BlockData {
+
     private String blockNumber;
+
+
+    public BlockData() {
+        // Void constructor required for calls to DataSnapshopt.
+    }
+
 
     public BlockData(String blockNumber) {
         this.blockNumber = blockNumber;

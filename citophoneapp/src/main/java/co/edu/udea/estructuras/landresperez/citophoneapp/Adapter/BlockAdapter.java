@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import co.edu.udea.estructuras.landresperez.citophoneapp.Activity.UserList;
-import co.edu.udea.estructuras.landresperez.citophoneapp.Data.BlockData;
+import co.edu.udea.estructuras.landresperez.citophoneapp.Model.BlockData;
 import co.edu.udea.estructuras.landresperez.citophoneapp.R;
 
 /**
