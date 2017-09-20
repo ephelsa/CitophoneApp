@@ -72,7 +72,7 @@ public class Block extends AppCompatActivity {
                 blockDataList.removeAll(blockDataList);
 
                 for (DataSnapshot numero : dataSnapshot.getChildren()) {
-                    blockDataList.add(new BlockData(getResources().getString(R.string.block)
+                    blockDataList.add(new BlockData(getResources().getString(R.string.block) + ' '
                             + numero.getKey()));
                 }
 
