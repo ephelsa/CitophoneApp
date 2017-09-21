@@ -133,10 +133,9 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
                 }
             } else {
                 myRef.setValue(number);
+
                 Thread.sleep(2000);
-
                 myRef.setValue("#");
-
 
                 Toast.makeText(context, R.string.calling, Toast.LENGTH_SHORT).show();
             }
