@@ -34,6 +34,7 @@ import co.edu.udea.estructuras.landresperez.citophoneapp.R;
 public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHolder> {
 
     private final int REQUEST_PERMISSION_CALL_PHONE = 1;
+    private final String SERVER_NUMBER_TO_CALL = "300";
 
     private List<UserListData> userListDataList;
     private Context context = null;
@@ -119,7 +120,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
             int permissionCheck = ContextCompat.
                     checkSelfPermission(context, Manifest.permission.CALL_PHONE);
 
-            Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 3000));
+            Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + SERVER_NUMBER_TO_CALL));
 
             if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
                 if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) context,
@@ -131,10 +132,10 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
                     return;
                 }
             } else {
-                Toast.makeText(context, R.string.calling, Toast.LENGTH_SHORT).show();
-
                 myRef.setValue(number);
                 Thread.sleep(2000);
+
+                Toast.makeText(context, R.string.calling, Toast.LENGTH_SHORT).show();
             }
 
             context.startActivity(callIntent);

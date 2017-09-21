@@ -56,7 +56,7 @@ public class StateActivity extends AppCompatActivity {
                 if (!value.equals("#")) {
                     fState.setText(value.toString());
 
-                    call(value);
+                    call(value.toString());
                 }
             }
 
@@ -74,14 +74,14 @@ public class StateActivity extends AppCompatActivity {
             int permissionCheck = ContextCompat.
                     checkSelfPermission(this, android.Manifest.permission.CALL_PHONE);
 
-            Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel" + number));
+            Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
 
             if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
                 if (ActivityCompat.shouldShowRequestPermissionRationale(this,
                         android.Manifest.permission.CALL_PHONE)) {
                     return;
                 } else {
-                    (this).requestPermissions(new String[]{android.Manifest.permission.CALL_PHONE},
+                    requestPermissions(new String[]{android.Manifest.permission.CALL_PHONE},
                             REQUEST_PERMISSION_CALL_PHONE);
                     return;
                 }
