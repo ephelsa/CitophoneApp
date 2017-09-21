@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "1037780883091",
+    "firebase_url": "https://citophoneapp.firebaseio.com",
+    "project_id": "citophoneapp",
+    "storage_bucket": "citophoneapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037780883091:android:b0eff4f54f772747",
+        "android_client_info": {
+          "package_name": "co.edu.udea.estructuras.landresperez.citophoneapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037780883091-imj5h4qqqed122joc1e3psq6i8dvhj62.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.edu.udea.estructuras.landresperez.citophoneapp",
+            "certificate_hash": "eb58f5fa10e544eb6e7a1516a2db4326878f5361"
+          }
+        },
+        {
+          "client_id": "1037780883091-6nkn0u2lvifrj9o2h5rk5dcjj7herri7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "co.edu.udea.estructuras.landresperez.citophoneapp",
+            "certificate_hash": "ea5eacabcb909f233d11bc47a0eb02a067f69287"
+          }
+        },
+        {
+          "client_id": "1037780883091-scbp65jk4uomdi7ti1h4c7hq0p2rspog.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD19LsYfQvphh-tDMLTygNhxI8vQ9qQNw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037780883091-scbp65jk4uomdi7ti1h4c7hq0p2rspog.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1037780883091:android:f433ea1ef54743d5",
+        "android_client_info": {
+          "package_name": "com.example.client_citophoneapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1037780883091-c1498r2lts0p189in93anda39nhn21ve.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.client_citophoneapp",
+            "certificate_hash": "eb58f5fa10e544eb6e7a1516a2db4326878f5361"
+          }
+        },
+        {
+          "client_id": "1037780883091-scbp65jk4uomdi7ti1h4c7hq0p2rspog.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCD19LsYfQvphh-tDMLTygNhxI8vQ9qQNw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1037780883091-scbp65jk4uomdi7ti1h4c7hq0p2rspog.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
