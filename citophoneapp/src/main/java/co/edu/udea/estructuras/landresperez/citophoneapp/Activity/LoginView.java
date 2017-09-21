@@ -71,7 +71,7 @@ public class LoginView extends FragmentActivity implements View.OnClickListener 
 
             if (pass.length() >= 6) {
                 login(user, pass);
-            } else if (pass.length() == 0) {
+            } else if (pass.length() == 0 && user.length() != 0) {
                 Toast.makeText(getApplicationContext(), R.string.void_fields,
                         Toast.LENGTH_SHORT).show();
             } else {
