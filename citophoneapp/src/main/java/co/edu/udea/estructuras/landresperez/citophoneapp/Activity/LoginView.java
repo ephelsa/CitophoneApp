@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 import co.edu.udea.estructuras.landresperez.citophoneapp.R;
 
-public class Login extends FragmentActivity implements View.OnClickListener {
+public class LoginView extends FragmentActivity implements View.OnClickListener {
 
     private EditText userName, password;
     private Button loginButton;
@@ -103,13 +103,13 @@ public class Login extends FragmentActivity implements View.OnClickListener {
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Log.d("Login", "signInWithEmail:onComplete:" + task.isSuccessful());
+                        Log.d("LoginView", "signInWithEmail:onComplete:" + task.isSuccessful());
 
                         // If sign in fails, display a message to the user. If sign in succeeds
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
-                            Log.w("Login", "signInWithEmail:failed", task.getException());
+                            Log.w("LoginView", "signInWithEmail:failed", task.getException());
 
                             Toast.makeText(getApplicationContext(), R.string.auth_failed,
                                     Toast.LENGTH_SHORT).show();
@@ -121,7 +121,7 @@ public class Login extends FragmentActivity implements View.OnClickListener {
     }
 
     private void nextView() {
-        Intent intent = new Intent(Login.this, Block.class);
+        Intent intent = new Intent(LoginView.this, BlockView.class);
 
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK
                 | Intent.FLAG_ACTIVITY_NEW_TASK);

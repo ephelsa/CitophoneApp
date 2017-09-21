@@ -1,10 +1,12 @@
 package co.edu.udea.estructuras.landresperez.citophoneapp.Model;
 
+import java.io.Serializable;
+
 /**
  * Created by landres.perez on 18/09/17.
  */
 
-public class BlockData {
+public class BlockData implements Serializable {
 
     private String blockNumber;
 
@@ -12,7 +14,6 @@ public class BlockData {
     public BlockData() {
         // Void constructor required for calls to DataSnapshopt.
     }
-
 
     public BlockData(String blockNumber) {
         this.blockNumber = blockNumber;

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CitophoneApp</string>
 
-    <!-- Login -->
+    <!-- LoginView -->
     <string name="login_title">Ingreso al sistema</string>
     <string name="user_name">Usuario</string>
     <string name="password">Contraseña</string>
@@ -12,7 +12,7 @@
     <string name="short_password">La contraseña debe contener al menos 6 caracteres</string>
 
 
-    <!-- Block -->
+    <!-- BlockView -->
     <string name="block">Bloque </string>
     <string name="fail_read">Error de lectura en DB</string>
 

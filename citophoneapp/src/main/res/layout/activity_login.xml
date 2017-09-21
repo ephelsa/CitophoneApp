@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context="co.edu.udea.estructuras.landresperez.citophoneapp.Activity.Login">
+    tools:context="co.edu.udea.estructuras.landresperez.citophoneapp.Activity.LoginView">
 
     <RelativeLayout
         android:layout_width="match_parent"

@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import co.edu.udea.estructuras.landresperez.citophoneapp.Activity.UserList;
+import co.edu.udea.estructuras.landresperez.citophoneapp.Activity.UserListView;
 import co.edu.udea.estructuras.landresperez.citophoneapp.Model.BlockData;
 import co.edu.udea.estructuras.landresperez.citophoneapp.R;
 
@@ -50,7 +50,7 @@ public class BlockAdapter extends RecyclerView.Adapter<BlockAdapter.ViewHolder> 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, UserList.class);
+                Intent intent = new Intent(context, UserListView.class);
 
                 context.startActivity(intent);
             }

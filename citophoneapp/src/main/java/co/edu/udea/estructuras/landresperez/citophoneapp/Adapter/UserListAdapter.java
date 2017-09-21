@@ -81,7 +81,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
 
     // Private Methods
     @TargetApi(23)
-    private void callMethod(long number) {
+    private void callMethod(String number) {
         try {
             int permissionCheck = ContextCompat.
                     checkSelfPermission(context, Manifest.permission.CALL_PHONE);

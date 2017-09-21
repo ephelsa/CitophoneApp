@@ -1,29 +1,31 @@
 package co.edu.udea.estructuras.landresperez.citophoneapp.Model;
 
+import java.io.Serializable;
+
 /**
  * Created by landres.perez on 18/08/17.
  */
 
-public class UserListData {
+public class UserListData implements Serializable {
 
     private String numeroApartamento, nombreApartamento;
 
-    private long numeroTelefono;
+    private String numeroTelefono;
 
     public UserListData() {
     }
 
-    public UserListData(String numeroApartamento, String nombreApartamento, long numeroTelefono) {
+    public UserListData(String numeroApartamento, String nombreApartamento, String numeroTelefono) {
         this.numeroApartamento = numeroApartamento;
         this.nombreApartamento = nombreApartamento;
         this.numeroTelefono = numeroTelefono;
     }
 
-    public long getNumeroTelefono() {
+    public String getNumeroTelefono() {
         return numeroTelefono;
     }
 
-    public void setNumeroTelefono(long numeroTelefono) {
+    public void setNumeroTelefono(String numeroTelefono) {
         this.numeroTelefono = numeroTelefono;
     }
 

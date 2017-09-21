@@ -28,7 +28,7 @@ import co.edu.udea.estructuras.landresperez.citophoneapp.R;
  * Created by landres.perez on 18/09/17.
  */
 
-public class Block extends AppCompatActivity {
+public class BlockView extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
@@ -71,9 +71,9 @@ public class Block extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 blockDataList.removeAll(blockDataList);
 
-                for (DataSnapshot numero : dataSnapshot.getChildren()) {
+                for (DataSnapshot bloque : dataSnapshot.getChildren()) {
                     blockDataList.add(new BlockData(getResources().getString(R.string.block) + ' '
-                            + numero.getKey()));
+                            + bloque.getKey()));
                 }
 
                 blockAdapter.notifyDataSetChanged();
@@ -112,7 +112,7 @@ public class Block extends AppCompatActivity {
      */
 
     private void logOut() {
-        Intent intent = new Intent(Block.this, Login.class);
+        Intent intent = new Intent(BlockView.this, LoginView.class);
 
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK
                 | Intent.FLAG_ACTIVITY_NEW_TASK);
