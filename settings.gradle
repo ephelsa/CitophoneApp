@@ -1,1 +1,1 @@
-include ':citophoneapp', ':client_citophoneapp'
+include ':citophoneapp', ':server_citophoneapp'

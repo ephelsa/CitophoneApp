@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CitophoneApp.iml" filepath="$PROJECT_DIR$/CitophoneApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/citophoneapp/citophoneapp.iml" filepath="$PROJECT_DIR$/citophoneapp/citophoneapp.iml" />
-      <module fileurl="file://$PROJECT_DIR$/client_citophoneapp/client_citophoneapp.iml" filepath="$PROJECT_DIR$/client_citophoneapp/client_citophoneapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/server_citophoneapp/server_citophoneapp.iml" filepath="$PROJECT_DIR$/server_citophoneapp/server_citophoneapp.iml" />
     </modules>
   </component>
 </project>

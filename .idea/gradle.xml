@@ -9,7 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/citophoneapp" />
-            <option value="$PROJECT_DIR$/client_citophoneapp" />
+            <option value="$PROJECT_DIR$/server_citophoneapp" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
