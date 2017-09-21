@@ -1,13 +1,10 @@
 package com.example.client_citophoneapp;
 
-import android.*;
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -51,12 +48,13 @@ public class StateActivity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-                String value = "**21*" + dataSnapshot.getValue().toString() + "#";
+                String value = dataSnapshot.getValue().toString();
+                String number = "**21*" + value + "#";
+
+                fState.setText(number);
 
                 if (!value.equals("#")) {
-                    fState.setText(value.toString());
-
-                    call(value.toString());
+                    call(number);
                 }
             }
 
