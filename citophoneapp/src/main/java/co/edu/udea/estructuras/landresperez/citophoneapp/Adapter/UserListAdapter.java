@@ -19,6 +19,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.List;
 
 import co.edu.udea.estructuras.landresperez.citophoneapp.Model.UserListData;
@@ -34,6 +37,11 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
 
     private List<UserListData> userListDataList;
     private Context context = null;
+
+    // Firebase
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("Llamar");
+
 
     public UserListAdapter(List<UserListData> userListDataList) {
         this.userListDataList = userListDataList;
@@ -77,7 +85,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
     }
 
     // Private Methods
-    @TargetApi(23)
+    /*@TargetApi(23)
     private void callMethod(String number) {
         try {
             int permissionCheck = ContextCompat.
@@ -101,6 +109,39 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
             context.startActivity(callIntent);
         } catch (ActivityNotFoundException e) {
             Log.e("Llamada", "Call failed", e);
+        }
+    }*/
+
+    @TargetApi(23)
+    private void callMethod(String number) {
+        // This is to implement the call forwarding.
+        try {
+            int permissionCheck = ContextCompat.
+                    checkSelfPermission(context, Manifest.permission.CALL_PHONE);
+
+            Intent callIntent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 3000));
+
+            if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+                if (ActivityCompat.shouldShowRequestPermissionRationale((Activity) context,
+                        Manifest.permission.CALL_PHONE)) {
+                    return;
+                } else {
+                    ((Activity) context).requestPermissions(new String[]{Manifest.permission.CALL_PHONE},
+                            REQUEST_PERMISSION_CALL_PHONE);
+                    return;
+                }
+            } else {
+                Toast.makeText(context, R.string.calling, Toast.LENGTH_SHORT).show();
+
+                myRef.setValue(number);
+                Thread.sleep(2000);
+            }
+
+            context.startActivity(callIntent);
+        } catch (ActivityNotFoundException e) {
+            Log.e("Llamada", "Call failed", e);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 
