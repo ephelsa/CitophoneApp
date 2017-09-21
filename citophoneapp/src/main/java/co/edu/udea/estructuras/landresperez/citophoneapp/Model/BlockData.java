@@ -10,7 +10,6 @@ public class BlockData implements Serializable {
 
     private String blockNumber;
 
-
     public BlockData() {
         // Void constructor required for calls to DataSnapshopt.
     }

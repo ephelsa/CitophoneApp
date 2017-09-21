@@ -65,18 +65,24 @@ public class UserListView extends AppCompatActivity {
 
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
+            String blockNumber = getIntent().getStringExtra("BLOCK_NUMBER");
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 dataList.removeAll(dataList);
 
                 for (DataSnapshot bloque : dataSnapshot.getChildren()) {
-                    for (DataSnapshot numero : bloque.getChildren()) {
-                        for (DataSnapshot nombre : numero.getChildren()) {
-                            for (DataSnapshot telf : nombre.getChildren()) {
-                                dataList.add(new UserListData(numero.getKey(), nombre.getKey(),
-                                        telf.getValue().toString()));
+                    if (bloque.getKey().equals(blockNumber)) {
+                        for (DataSnapshot numero : bloque.getChildren()) {
+                            for (DataSnapshot nombre : numero.getChildren()) {
+                                for (DataSnapshot telf : nombre.getChildren()) {
+                                    dataList.add(new UserListData(numero.getKey(), nombre.getKey(),
+                                            telf.getValue().toString()));
+                                }
                             }
                         }
+
+                        break;
                     }
                 }
 

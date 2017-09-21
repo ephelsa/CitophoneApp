@@ -40,7 +40,7 @@ public class BlockAdapter extends RecyclerView.Adapter<BlockAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(BlockAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(BlockAdapter.ViewHolder holder, final int position) {
         holder.block.setText(blockDataList.get(position).getBlockNumber());
 
         /*
@@ -50,9 +50,7 @@ public class BlockAdapter extends RecyclerView.Adapter<BlockAdapter.ViewHolder> 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, UserListView.class);
-
-                context.startActivity(intent);
+                nextView(position);
             }
         });
     }
@@ -65,6 +63,17 @@ public class BlockAdapter extends RecyclerView.Adapter<BlockAdapter.ViewHolder> 
     @Override
     public int getItemCount() {
         return blockDataList.size();
+    }
+
+    // Private Methods
+    private void nextView(int position) {
+        String blockNumber = blockDataList.get(position).getBlockNumber()
+                .replaceAll(context.getResources().getString(R.string.block) + ' ', "");
+
+        Intent intent = new Intent(context, UserListView.class);
+        intent.putExtra("BLOCK_NUMBER", blockNumber);
+
+        context.startActivity(intent);
     }
 
     protected class ViewHolder extends RecyclerView.ViewHolder {
