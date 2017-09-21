@@ -61,9 +61,6 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, "Nombre" + userListDataList.get(position)
-                        .getNombreApartamento(), Toast.LENGTH_SHORT).show();
-
                 callMethod(userListDataList.get(position).getNumeroTelefono());
             }
         });
@@ -98,7 +95,7 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
                     return;
                 }
             } else {
-                Toast.makeText(context, "Llamando...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, R.string.calling, Toast.LENGTH_SHORT).show();
             }
 
             context.startActivity(callIntent);

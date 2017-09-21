@@ -111,14 +111,6 @@ public class UserListView extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    private void iniciar() {
-        // Delete this method when join with Firebase
-
-        //dataList.add(new UserListData(String.valueOf(100 + i), "ENCARGADO DEL APARTAMENTO " + i,
-            //        3000000 + i));
-    }
-
         /*
     *   Private Methods
      */

@@ -19,6 +19,7 @@
     <!-- -->
     <string name="proof">Texto de Prueba</string>
     <string name="call">Llamar</string>
+    <string name="calling">Llamando...</string>
     <string name="logout">Cerrar sesión</string>
 
 </resources>

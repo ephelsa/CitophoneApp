@@ -20,6 +20,8 @@ import co.edu.udea.estructuras.landresperez.citophoneapp.R;
 
 public class LoginView extends FragmentActivity implements View.OnClickListener {
 
+    private static final String EMAIL_HANDLER = "@udea.edu.co";
+
     private EditText userName, password;
     private Button loginButton;
 
@@ -64,7 +66,7 @@ public class LoginView extends FragmentActivity implements View.OnClickListener 
         String user, pass;
 
         if (view.getId() == R.id.login_button) {
-            user = userName.getText().toString() + "@udea.edu.co";
+            user = userName.getText().toString() + EMAIL_HANDLER;
             pass = password.getText().toString();
 
             if (pass.length() >= 6) {
